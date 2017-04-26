@@ -174,12 +174,12 @@ class ViewController: UIViewController {
 		]
 		
 		// Action triggered on selection
-		chooseArticleDropDown.selectionAction = { [unowned self] (index, item) in
-			self.chooseArticleButton.setTitle(item, for: .normal)
+		chooseArticleDropDown.selectionAction = { [weak self] (index, item) in
+			self?.chooseArticleButton.setTitle(item, for: .normal)
 		}
 		
 		// Action triggered on dropdown cancelation (hide)
-		//		dropDown.cancelAction = { [unowned self] in
+		//		dropDown.cancelAction = { [weak self] in
 		//			// You could for example deselect the selected item
 		//			self.dropDown.deselectRowAtIndexPath(self.dropDown.indexForSelectedRow)
 		//			self.actionButton.setTitle("Canceled", forState: .Normal)
@@ -214,7 +214,7 @@ class ViewController: UIViewController {
 		]
 		
 		// Action triggered on selection
-		amountDropDown.selectionAction = { [unowned self] (index, item) in
+		amountDropDown.selectionAction = { [weak self] (index, item) in
 			self.amountButton.setTitle(item, for: .normal)
 		}
 	}
@@ -235,7 +235,7 @@ class ViewController: UIViewController {
 		]
 		
 		// Action triggered on selection
-		chooseDropDown.selectionAction = { [unowned self] (index, item) in
+		chooseDropDown.selectionAction = { [weak self] (index, item) in
 			self.chooseButton.setTitle(item, for: .normal)
 		}
 	}
